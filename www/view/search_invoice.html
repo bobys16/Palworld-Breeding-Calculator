@@ -1,0 +1,74 @@
+ <div style="width:100vw">
+            <!-- Page Title-->
+           <div class="pt-3">
+               <div class="page-title d-flex">
+                   <div class="align-self-center">
+                       <a href="#"
+                       onclick="javascript:location.replace('home.html');"
+                       class="me-3 ms-0 icon icon-xxs bg-theme rounded-s shadow-m">
+                           <i class="bi bi-chevron-left color-theme font-14"></i>
+                       </a>
+                   </div>
+                   <div class="align-self-center me-auto">
+                       <h1 class="color-theme mb-0 font-18">Kembali ke Beranda</h1>
+                   </div>
+                   
+               </div>
+           </div>
+           <div class="card card-style">
+                <div class="content">
+                    <p class="mb-3"> Cari Invoice Berdasarkan Tanggal </p>
+                    <form class="demo-animation needs-validation m-0 " newjs="true" action="search_invoice">
+                        
+                        <div class="form-custom form-label form-icon mb-3">
+                            <i class="bi bi-calendar font-12"></i>
+                            <input type="hidden" name="type" value="date">
+                            <input type="date" class="form-control rounded-xs" id="date" name="date" min="2023-01-01" value="2023-10-24">
+                            <label for="c5" class="color-theme">Select a Date</label>
+                            <div class="valid-feedback">HTML5 does not offer Dates Field Validation!</div>
+                        </div>
+                        
+                        <button onclick="" class="btn btn-full bg-blue-dark rounded-xs text-uppercase font-700 w-100 btn-s mt-4" type="submit">Cari</button>
+                    </form>
+                    
+                </div>
+            </div>
+             <div class="card card-style">
+                <div class="content">
+                    <p class="mb-3"> Cari Invoice Berdasarkan Nama Penerima</p>
+                    <form class="demo-animation needs-validation m-0" newjs="true" action="search_invoice">
+                        
+                        <div class="form-custom form-label form-icon mb-3">
+                            <i class="bi bi-calendar font-12"></i>
+                            <input type="hidden" name="type" value="nama">
+                            <input type="text" class="form-control rounded-xs" id="a2" name="nama" placeholder="Contoh: Jln Soekarno Hatta, Malang"/>
+                            <label for="c5" class="color-theme">Select a Date</label>
+                            <div class="valid-feedback">HTML5 does not offer Dates Field Validation!</div>
+                        </div>
+                        
+                        <button class="btn btn-full bg-blue-dark rounded-xs text-uppercase font-700 w-100 btn-s mt-4" type="submit">Cari</button>
+                    </form>
+                    
+                </div>
+            </div>
+            <div class="card card-style">
+                <div class="content">
+                    <p class="mb-3"> Cari Invoice Berdasarkan Kode </p>
+                    <form class="demo-animation needs-validation m-0 s_kode" newjs="true" action="search_invoice">
+                        
+                        <div class="form-custom form-label form-icon mb-3">
+                            <i class="bi bi-calendar font-12"></i>
+                            <input type="hidden" name="type" value="kode">
+                            <input type="text" class="form-control rounded-xs" id="a2" name="kode" placeholder="Contoh: MM123878 / 123 / 123878"/>
+                            <label for="c5" class="color-theme">Select a Date</label>
+                            <div class="valid-feedback">HTML5 does not offer Dates Field Validation!</div>
+                        </div>
+                        
+                        <button class="btn btn-full bg-blue-dark rounded-xs text-uppercase font-700 w-100 btn-s mt-4" type="submit">Cari</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+<script>
+</script>

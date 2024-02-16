@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.breedcalc.pals" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Palworld Breed Calculator</name>
+    <description>Palworld Breed Calculator</description>
+    <author email="pkemngoo1606@gmail.com" href="https://solvine.online">
+        Bondan Charisnanda Mac HP
+    </author>
+    <content src="index.html" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <platform name="android">    
+        <icon src="logo.png" density="mdpi" />
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="logo.png" />
+        <icon src="logo.png" density="ldpi" />
+        <icon src="logo.png" density="hdpi" />
+        <icon src="logo.png" density="xhdpi" />
+        <icon src="logo.png" density="xxhdpi" />
+</platform>
+</widget>

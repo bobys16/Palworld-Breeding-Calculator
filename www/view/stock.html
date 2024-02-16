@@ -1,0 +1,59 @@
+
+        <div style="width:100vw">
+            <!-- Page Title-->
+           <div class="pt-3">
+               <div class="page-title d-flex">
+                   <div class="align-self-center">
+                       <a  onclick="javascript:location.replace('home.html');"
+                       class="me-3 ms-0 icon icon-xxs bg-theme rounded-s shadow-m">
+                           <i class="bi bi-chevron-left color-theme font-14"></i>
+                       </a>
+                   </div>
+                   <div class="align-self-center me-auto">
+                       <h1 class="color-theme mb-0 font-18">Kembali ke Beranda</h1>
+                   </div>
+                   
+               </div>
+           </div>
+          
+           <div class="content mt-0">
+               <h5 class="pb-3 pt-4">Daftar Stock</h5>
+               <div class="card card-style">
+               <div class="content">
+                  <div class="tabs tabs-pill" id="tab-group-2">
+                   
+                     <div class="mt-3"></div>
+                     <!-- Tab Group 3 -->
+                     <div class="collapse show" id="tab-6" data-tab="channel" data-bs-parent="#tab-group-2">
+                        <h5 class="pt-1 mb-n1">Daftar Stock</h5>
+                        <au data-tab="charl2">
+                        </au>
+                     </div>
+                  </div>
+               </div>
+            </div>
+              
+           </div>
+        </div>
+
+        <script>
+            
+            if('stock' in local) {
+                var abc = JSON.parse(local.stock);
+                console.log(abc);
+                if(abc.data.length > 0) {
+                    $.each(abc.data, function(k,val) {
+                       var el = '<a href="#" class="d-flex py-1"> <div class="align-self-center"> <span class="icon rounded-s me-2 gradient-white shadow-bg shadow-bg-s"><img src="beef.png" height="45px" width="45px"></span> </div> <div class="align-self-center ps-1"> <h5 class="pt-1 mb-n1">'+val.nama+'</h5> <p class="mb-0 font-11 opacity-50">'+val.stock+' KG</p> </div> <div class="align-self-center ms-auto text-end"> <span onclick="SaveDetails('+val.id+');" class="btn btn-xxs gradient-blue shadow-bg shadow-bg-xs">Detail</span> </div> </a> <div class="divider my-2 opacity-50"></div>';
+                        $('[data-tab="charl2"]').append(el);
+                    });
+                      
+                    }else{
+                        var el = '<a href="#" class="d-flex py-1"> <div class="align-self-center"> <span class="icon rounded-s me-2 gradient-white shadow-bg shadow-bg-s"><img src="beef.png" height="45px" width="45px"></span> </div> <div class="align-self-center ps-1"> <h5 class="pt-1 mb-n1">'+abc.data.nama+'</h5> <p class="mb-0 font-11 opacity-50">'+abc.data.stock+'</p> </div> <div class="align-self-center ms-auto text-end"> <span onclick="SaveDetails('+abc.data.id+');" class="btn btn-xxs gradient-blue shadow-bg shadow-bg-xs">Detail</span> </div> </a> ';
+                        $('[data-tab="charl2"]').append(el);
+                    }
+
+                }else{
+                     var el = '<center><h5 class="pt-1 mb-n1">Data Error</h5></center>';
+                           $('[data-tab="charl2"]').append(el);
+                }
+        </script>
