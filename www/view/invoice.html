@@ -1,0 +1,339 @@
+<div style="width:100vw">
+    <div class="pt-3">
+   <div class="page-title d-flex">
+       <div class="align-self-center">
+           <a onclick="javascript:location.replace('home.html');"
+           class="me-3 ms-0 icon icon-xxs bg-theme rounded-s shadow-m">
+               <i class="bi bi-chevron-left color-theme font-14"></i>
+           </a>
+       </div>
+       <div class="align-self-center me-auto">
+           <h1 class="color-theme mb-0 font-18">Back to Home</h1>
+       </div>
+       
+   </div>
+</div>
+<div class="card card-style px-0">
+    <div class="position-relative pt-3">
+       
+    </div>
+    <hr>
+    <div class="content mt-0 mb-0">
+       <center><h5 class="font-15 mb-0">Kode Invoice: #<ss id="title"></ss></h5></center>
+   <hr>
+        <a href="#" class="d-flex pb-3">
+            <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-cash-coin font-20 color-white"></i></span>
+            </div>
+            <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Total</h5>
+                <p class="mb-0 font-11 opacity-50">Yang Harus Dibayar</p>
+            </div>
+            <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1 color-green-dark" >Rp. <ss id="harga_total"></ss></h4>
+            </div>
+        </a>
+        <a href="#" class="d-flex pb-3">
+            <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-file-spreadsheet font-20 color-white"></i></span>
+            </div>
+            <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Total KG</h5>
+                <p class="mb-0 font-11 opacity-50">Yang di jual</p>
+            </div>
+            <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1 color-green-dark" ><ss id="kg_total"></ss> Kg</h4>
+            </div>
+        </a>
+        <a href="#" class="d-flex pb-3">
+            <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-credit-card-2-front font-20 color-white"></i></span>
+            </div>
+            <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Status Pembayaran</h5>
+                <p class="mb-0 font-11 opacity-50">Pembayaran</p>
+            </div>
+            <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1" ><ss id="pembayaran"></ss></h4>
+            </div>
+        </a>
+        <a href="#" class="d-flex pb-3">
+            <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-calendar-date font-20 color-white"></i></span>
+            </div>
+            <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Dibayar Pada Tanggal</h5>
+                <p class="mb-0 font-11 opacity-50">Tanggal Pembayaran</p>
+            </div>
+            <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1 color-blue-dark" ><ss id="tanggal_pembayaran"></ss></h4>
+            </div>
+        </a>
+         <a href="#" class="d-flex pb-3">
+            <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-truck font-20 color-white"></i></span>
+            </div>
+            <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Status Kirim</h5>
+                <p class="mb-0 font-11 opacity-50">Status Pengiriman</p>
+            </div>
+            <div class="align-self-center ms-auto text-end">
+                <h4  class="pt-1 mb-n1" ><ss id="pengiriman"></ss></h4>
+            </div>
+        </a>
+         <a href="#" class="d-flex pb-3">
+            <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-calendar-date font-20 color-white"></i></span>
+            </div>
+            <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Dikirim Pada Tanggal</h5>
+                <p class="mb-0 font-11 opacity-50">Tanggal Pengiriman</p>
+            </div>
+            <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1 color-blue-dark" ><ss id="tanggal_kirim"></ss></h4>
+            </div>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="card card-style px-0">
+    <div class="position-relative pt-3">
+       
+    </div>
+    <hr>
+    <div class="content mt-0 mb-0">
+       <center><h5 class="font-15 mb-0">Detail Pelanggan</h5></center>
+   <hr>
+        <a href="#" class="d-flex pb-3">
+            <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-person-badge font-20 color-white"></i></span>
+            </div>
+            <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Nama</h5>
+                <p class="mb-0 font-11 opacity-50"></p>
+            </div>
+            <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1 color-green-dark" ><ss id="nama"></ss></h4>
+            </div>
+        </a>
+        <a href="#" class="d-flex pb-3">
+            <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-whatsapp font-20 color-white"></i></span>
+            </div>
+            <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">WhatsApp</h5>
+            </div>
+            <div class="align-self-center ms-auto text-end">
+                <h4  class="pt-1 mb-n1" ><ss id="phone"></ss></h4>
+            </div>
+        </a>
+        <a href="#" class="d-flex pb-3">
+            <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-geo-alt font-20 color-white"></i></span>
+            </div>
+            <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Alamat</h5>
+            </div>
+            <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1" ><ss id="alamat"></ss></h4>
+            </div>
+        </a>
+        
+        
+    </div>
+</div>
+
+<div class="card card-style px-0">
+    <div class="position-relative pt-3">
+       
+    </div>
+    <hr>
+    <div class="content mt-0 mb-0">
+       <center><h5 class="font-15 mb-0">Detail Item</h5></center>
+   <hr>
+   <au data-tab="item_list">
+        
+    </au>
+
+    <a href="#" class="d-flex pb-3">
+            <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-tags font-20 color-white"></i></span>
+            </div>
+            <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Ongkir</h5>
+            </div>
+            <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1" >Rp. <ss id="ongkir"></ss></h4>
+            </div>
+        </a>
+       <a href="#" class="d-flex pb-3">
+            <div class="align-self-center">
+                <span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-cash-coin font-20 color-white"></i></span>
+            </div>
+            <div class="align-self-center ps-1">
+                <h5 class="pt-1 mb-n1">Total</h5>
+                <p class="mb-0 font-11 opacity-50">Yang Harus Dibayar</p>
+            </div>
+            <div class="align-self-center ms-auto text-end">
+                <h4 class="pt-1 mb-n1 color-green-dark" >Rp. <ss id="harga_total2"></ss></h4>
+            </div>
+        </a>
+        
+    </div>
+</div>
+<div class="card card-style gradient-green rounded-s shadow-bg shadow-bg-xs mb-3" id="claim_btn">
+    <div class="content my-2">
+        <a href="#" onclick="KonfirmasiPengiriman(223);" class="d-flex">
+            <div class="align-self-center">
+                <h1 class="mb-0 font-14"><i class="bi bi-truck color-white pe-3"></i></h1>
+            </div>
+            <div class="align-self-center">
+                <h5 class="color-white font-600 mb-0 mt-0 font-14 line-height-s">
+                    Konfirmasi Pengiriman
+                </h5>
+            </div>
+            <div class="align-self-center ms-auto">
+                <h5 class="color-white font-600 mb-0 mt-0 font-14 line-height-s">
+                    Klik Saya
+                </h5>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="card card-style gradient-red rounded-s shadow-bg shadow-bg-xs mb-3" id="claim_btn1">
+    <div class="content my-2">
+        <a href="#" onclick="KonfirmasiPembayaran(223);" class="d-flex">
+            <div class="align-self-center">
+                <h1 class="mb-0 font-14"><i class="bi bi-check-square color-white pe-3"></i></h1>
+            </div>
+            <div class="align-self-center">
+                <h5 class="color-white font-600 mb-0 mt-0 font-14 line-height-s">
+                    Konfirmasi Pembayaran
+                </h5>
+            </div>
+            <div class="align-self-center ms-auto">
+                <h5 class="color-white font-600 mb-0 mt-0 font-14 line-height-s">
+                    Klik Saya
+                </h5>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="card card-style">
+    <div class="content">
+        <h4 class="mb-2">
+            Apa yang akan harus saya lakukan?
+        </h4>
+       <p class="mb-2" id="description"><b><i>Mohon diperhatikan, jika anda ingin mengganti status pengiriman cukup klik tombol diatas. untuk notifikasi pembayaran yang telat akan di kirim ke WhatsApp Pelanggan ketika lewat 3 hari dari pembuatan invoice. Jika pelanggan sudah melakukan pembayaran anda wajib menekan tombol Konfirmasi Pembayaran</i></b></p>
+    </div>
+</div>
+<div class="card card-style">
+    <div class="content">
+        <h4 class="mb-2">
+            Bukti Pembayaran
+        </h4>
+      <div class="mx-auto" style="width: 320px; position: relative;"><!-- same height as chart in plugins/apex/apex-call.js-->
+            <img src="" id="imag" class="mx-auto" style="width: 320px; position: relative;">
+        </div>
+    </div>
+</div>
+<script>
+
+if('invoice_detail' in local) {
+    var abc = JSON.parse(local.invoice_detail);
+    // prosesess
+    
+    $('#alamat').html(abc['alamat']);
+    $('#phone').html(abc['phone']);
+    $('#nama').html(abc['nama']);
+    $('#tanggal_kirim').html(abc['tanggal_kirim']);
+    $('#tanggal_pembayaran').html(abc['tanggal_pembayaran'])
+    $('#pembayaran').html(abc['pembayaran']);
+    $('#pengiriman').html(abc['pengiriman']);
+    $('#kg_total').html(abc['kg_total']);
+    $('#harga_total').html(abc['harga_total']);
+    $('#harga_total2').html(abc['harga_total']);
+    $('#title').html(abc['invoice']);
+    $('#ongkir').html(abc['ongkir']);
+    if(abc['bukti'] !== '-'){
+        $('#imag').attr('src', abc['bukti']);
+    }else{
+        $('#imag').attr('src', 'https://png.pngtree.com/element_our/20200702/ourlarge/pngtree-no-photography-photo-illustration-image_2292077.jpg');
+    }
+    if(abc['pengiriman'] == "DIKIRIM"){
+        $('#claim_btn').hide();
+    }else{
+        $('#statusnya').addClass('color-green-dark');
+    }
+
+    if(abc['pembayaran'] == "LUNAS"){
+        $('#claim_btn1').hide();
+    }
+    var a = JSON.parse(abc['item']);
+    if(a.data.length > 0) {
+        $.each(a.data, function(k,val) {
+           var el = '<a href="#" class="d-flex pb-3"><div class="align-self-center"><span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-bookmark-heart font-20 color-white"></i></span></div><div class="align-self-center ps-1"><h5 class="pt-1 mb-n1">'+val.product+'</h5><p class="mb-0 font-11 opacity-50"> '+val.jumlah+' Kg</p></div><div class="align-self-center ms-auto text-end"><h4 class="pt-1 mb-n1" >Rp. '+val.total+'</h4></div></a>';
+            $('[data-tab="item_list"]').append(el);
+        });
+      
+    }else{
+        var el = '<a href="#" class="d-flex pb-3"><div class="align-self-center"><span class="icon rounded-s me-2 gradient-magenta shadow-bg shadow-bg-xs"><i class="bi bi-bookmark-heart font-20 color-white"></i></span></div><div class="align-self-center ps-1"><h5 class="pt-1 mb-n1">'+a.data.product+'</h5><p class="mb-0 font-11 opacity-50"> '+a.data.jumlah+' Kg</p></div><div class="align-self-center ms-auto text-end"><h4 class="pt-1 mb-n1" >Rp. '+a.data.total+'</h4></div></a>';
+        $('[data-tab="item_list"]').append(el);
+    }
+}
+
+
+function KonfirmasiPengiriman(id){
+   var abc = JSON.parse(local.invoice_detail);
+   var rid = abc['id']; 
+   var path = 'edit_invoice';
+   var data = 'id='+rid+'&tipe=1';
+   $('#vipbt').click();
+   poster(path, data, function(r) {
+       setTimeout(function() {
+           $('#preloader').addClass('preloader-hide');
+               if(r.status == 'success') {
+                  $('#hilang1').click();
+                   console.log(r);
+                   local.invoice_detail = JSON.stringify(r.invoice_detail);
+                   $('#vipaa').click();
+               }else{
+                  $('#hilang1').click();
+                   Swal.fire({
+                     icon: 'error',
+                     title: 'Error Code:'+r.code,
+                     text: r.msg,
+                   })
+               }
+           
+       }, 2000);
+   });
+}
+function KonfirmasiPembayaran(id){
+   var abc = JSON.parse(local.invoice_detail);
+   var rid = abc['id']; 
+   var path = 'edit_invoice';
+   var data = 'id='+rid+'&tipe=2';
+   $('#vipbt').click();
+   poster(path, data, function(r) {
+       setTimeout(function() {
+           $('#preloader').addClass('preloader-hide');
+               if(r.status == 'success') {
+                  $('#hilang1').click();
+                   console.log(r);
+                   local.invoice_detail = JSON.stringify(r.invoice_detail);
+                   $('#vipaa').click();
+               }else{
+                  $('#hilang1').click();
+                   Swal.fire({
+                     icon: 'error',
+                     title: 'Error Code:'+r.code,
+                     text: r.msg,
+                   })
+               }
+           
+       }, 2000);
+   });
+}
+</script>

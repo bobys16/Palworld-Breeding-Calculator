@@ -1,0 +1,117 @@
+
+        <div style="width:100vw">
+            <!-- Page Title-->
+           <div class="pt-3">
+               <div class="page-title d-flex">
+                   <div class="align-self-center">
+                       <a href="#"
+                       onclick="javascript:location.replace('home.html');"
+                       class="me-3 ms-0 icon icon-xxs bg-theme rounded-s shadow-m">
+                           <i class="bi bi-chevron-left color-theme font-14"></i>
+                       </a>
+                   </div>
+                   <div class="align-self-center me-auto">
+                       <h1 class="color-theme mb-0 font-18">Kembali ke Beranda</h1>
+                   </div>
+                   
+               </div>
+           </div>
+           <div class="card card-style">
+                <div class="content">
+                    <p class="mb-3"> Cari invoice? Klik tombol dibawah ini </p>
+                    <button view="true" path="search_invoice.html"  class="btn btn-full bg-blue-dark rounded-xs text-uppercase font-700 w-100 btn-s mt-4" type="button">Halaman Pencarian</button>
+                    
+                </div>
+            </div>
+            
+            <div class="card overflow-visible card-style">
+               <div class="content mb-0">
+                  <h4>10 Invoice Terbaru</h4>
+                  <p>
+                     Ini adalah 10 Nota / Invoice terbaru
+                  </p>
+                  <div class="table-responsive">
+                     <table class="table color-theme mb-2">
+                        <thead>
+                           <tr>
+                              <th scope="col">NO</th>
+                              <th scope="col">Total</th>
+                              <th scope="col">Pembayaran</th>
+                              <th scope="col">Detail</th>
+
+                           </tr>
+                        </thead>
+                        <tbody apalu="online2">
+                           
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+
+             <div class="card overflow-visible card-style">
+               <div class="content mb-0">
+                  <h4>Invoice Belum Terbayar</h4>
+                  <p>
+                     Ini adalah Nota / Invoice yang belum dibayar
+                  </p>
+                  <div class="table-responsive">
+                     <table class="table color-theme mb-2">
+                        <thead>
+                           <tr>
+                              <th scope="col">NO</th>
+                              <th scope="col">Total</th>
+                              <th scope="col">Pembayaran</th>
+                              <th scope="col">Detail</th>
+
+                           </tr>
+                        </thead>
+                        <tbody apalu="online1">
+                           
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+        </div>
+
+
+      <script>
+
+    if ('invoice' in local) {
+        var pl = JSON.parse(local.invoice);
+        console.log(pl);
+        if (pl.data.length > 0) {
+            $.each(pl.data, function(k, val) {
+               
+                var el = '<tr><td>#' + val.invoice + '</td> <td>Rp. ' + val.harga_total + '</td> <td>' + val.pembayaran + '</td> <td class="color-green-dark"><span onclick="getInvoice('+val.id+');" class="btn btn-xxs gradient-blue shadow-bg shadow-bg-xs">Detail</span></td></tr>';
+                $('[apalu="online2"]').append(el);
+            });
+        } else {
+           
+            var el = '<tr><td>' + pl.data.invoice + '</td> <td>Rp. ' + pl.data.harga_total + '</td> <td>' + pl.data.pembayaran + '</td> <td class="color-green-dark"><span onclick="getInvoice('+pl.data.id+');" class="btn btn-xxs gradient-blue shadow-bg shadow-bg-xs">Detail</span></td></tr>';
+            $('[apalu="online2"]').append(el);
+        }
+    } else {
+        var el = ' <tr><td>KOSONG</td> <td>KOSONG</td> <td class="color-green-dark">KOSONG</td> <td>KOSONG</td></tr>';
+        $('[apalu="online2"]').append(el);
+    }
+
+     if ('invoice_ngutang' in local) {
+        var pl = JSON.parse(local.invoice_ngutang);
+        console.log(pl);
+        if (pl.data.length > 0) {
+            $.each(pl.data, function(k, val) {
+                var el = '<tr><td>#' + val.invoice + '</td> <td>Rp. ' + val.harga_total + '</td> <td>' + val.pembayaran + '</td> <td class="color-green-dark"><span onclick="getInvoice('+val.id+');" class="btn btn-xxs gradient-blue shadow-bg shadow-bg-xs">Detail</span></td></tr>';
+                $('[apalu="online1"]').append(el);
+            });
+        } else {
+            var el = '<tr><td>' + pl.data.invoice + '</td> <td>Rp. ' + pl.data.harga_total + '</td> <td>' + pl.data.pembayaran + '</td> <td class="color-green-dark"><span onclick="getInvoice('+pl.data.id+');" class="btn btn-xxs gradient-blue shadow-bg shadow-bg-xs">Detail</span></td></tr>';
+            $('[apalu="online1"]').append(el);
+        }
+    } else {
+        var el = ' <tr><td>KOSONG</td> <td>KOSONG</td> <td class="color-green-dark">KOSONG</td> <td>KOSONG</td></tr>';
+        $('[apalu="online1"]').append(el);
+    }
+
+    </script>

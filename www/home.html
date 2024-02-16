@@ -1,0 +1,451 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+      <title>Palworld Breeding Calculator</title>
+      <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="fonts/bootstrap-icons.css">
+      <link rel="stylesheet" type="text/css" href="styles/style.css">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+      
+      <meta id="theme-check" name="theme-color" content="#FFFFFF">
+      <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+   </head>
+   <link rel="stylesheet" class="page-highlight" type="text/css" href="styles/highlights/red.css">
+   <body class="theme-dark" data-highlight="highlight-red">
+      <div id="preloader">
+         <div class="spinner-border color-highlight" role="status"></div>
+      </div>
+      <!-- Page Wrapper-->
+      <div id="page">
+         <!-- Footer Bar -->
+         <div id="footer-bar" class="footer-bar-1 footer-bar-detached">
+            <a href="#" onclick="javascript:location.replace('home.html');"><i class="bi bi-house-door-fill"></i><span>Home</span></a>
+            <a href="#" onclick="Swal.fire({
+                     icon: 'info',
+                     title: 'Working',
+                     text: 'Feature still on process..',
+                     });"><i class="bi bi-person-badge"></i><span>Pals</span></a>
+            <a href="#" view="true" path="calculator.html" class="circle-nav-2"><i class="bi bi-calculator"></i><span>Calculator</span></a>
+            <a href="#" onclick="Swal.fire({
+                     icon: 'info',
+                     title: 'Working',
+                     text: 'Feature still on process..',
+                     });"><i class="bi bi-receipt"></i><span>Statistics</span></a>
+            <a href="#" data-bs-toggle="offcanvas" data-bs-target="#menu-sidebar"><i class="bi bi-list"></i><span>Menu</span></a>
+         </div>
+         <!-- Page Content - Only Page Elements Here-->
+         <div class="page-content footer-clear" id="container">
+            <!-- Page Title-->
+            <div class="pt-3">
+               <div class="page-title d-flex">
+                  <div class="align-self-center me-auto">
+                     <p class="color-highlight header-date"></p>
+                     <h1>Palworld</h1>
+                     <p class="color-highlight">Breeding Calculator</p>
+                  </div>
+                  <div class="align-self-center ms-auto">
+                     <a href="#"
+                       
+                        class="icon gradient-white shadow-bg shadow-bg-s rounded-m">
+                     <img src="logo.png" width="45" class="rounded-m" alt="img">
+                     </a>
+                     <!-- Page Title Dropdown Menu-->
+                  
+                  </div>
+               </div>
+            </div>
+            
+            <div class="card card-style shadow-card shadow-card-l" style="background-image:url('logo.png');" data-card-height="180" style="height: 180px;">
+               <div class="card-top px-3 py-3 mt-1 no-click">
+                  <h5 class="color-white font-400 mb-0 opacity-70">Overall Statistics</h5>
+               </div>
+               <div class="card-bottom pb-3 px-3">
+                  <div class="d-flex">
+                     <div class="align-self-end me-auto">
+                        <h4 class="color-white font-13 font-400 opacity-70 mb-n1">Most Result</h4>
+                        <h1 class="color-white font-24 font-700">[|]most_result[|]</h1>
+                     </div>
+                     <div>
+                        <h4 class="color-white font-13 font-400 opacity-70 mb-n1">Total Search</h4>
+                        <h1 class="color-white font-24 font-700">[|]search_total[|] Times</h1>
+                     </div>
+                  </div>
+               </div>
+               <div class="card-overlay bg-black opacity-70"></div>
+            </div>
+           
+          
+          
+
+             <div class="card card-style">
+               <div class="content">
+                  <div class="tabs tabs-pill" id="tab-group-2">
+                     <div class="tab-controls rounded-m p-1 overflow-visible">
+                        <a class="font-13 rounded-m shadow-bg shadow-bg-s" data-bs-toggle="collapse" href="#tab-6" aria-expanded="true">Paldeck</a>
+                     </div>
+                     <div class="mt-3"></div>
+                     <!-- Tab Group 3 -->
+                     <div class="collapse show" id="tab-6" data-tab="channel" data-bs-parent="#tab-group-2">
+                        <h5 class="pt-1 mb-n1">All Pal List - Open to get all breding possibility</h5>
+                        <au data-tab="charl">
+                        </au>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div id="channel_empty" hidden="true">
+               <div class="divider my-2 opacity-50"></div>
+               <center>
+                  <h5 class="pt-1 mb-n1">Unable to Load</h5>
+               </center>
+            </div>
+         </div>
+         <!-- End of Page Content-->
+         <!-- Off Canvas and Menu Elements-->
+         <!-- Always outside the Page Content-->
+         <!-- Main Sidebar Menu -->
+         <div id="menu-sidebar" data-menu-active="nav-welcome" 
+            class="offcanvas offcanvas-start offcanvas-detached rounded-m">
+            <!-- menu-size will be the dimension of your menu. If you set it to smaller than your content it will scroll-->
+            <div class="menu-size" style="width:230px;">
+               <!-- Menu Title-->
+               <div class="pt-3">
+                  <div class="page-title sidebar-title d-flex">
+                     <div class="align-self-center me-auto">
+                        <p class="color-highlight">Welcome to</p>
+                        <h1>Palworld</h1>
+                     </div>
+                     <div class="align-self-center ms-auto">
+                        <a href="#"
+                           data-bs-toggle="dropdown"
+                           class="icon gradient-white shadow-bg shadow-bg-s rounded-m">
+                        <img src="logo.png" width="45" class="rounded-m" alt="img">
+                        </a>
+                        <!-- Menu Title Dropdown Menu-->
+                        <div class="dropdown-menu">
+                           <div class="card card-style shadow-m mt-1 me-1">
+                              <div class="list-group list-custom list-group-s list-group-flush rounded-xs px-3 py-1">
+                                 <a href="page-wallet.html" class="list-group-item">
+                                 <i class="has-bg gradient-green shadow-bg shadow-bg-xs color-white rounded-xs bi bi-credit-card"></i>
+                                 <strong class="font-13">Wallet</strong>
+                                 </a>
+                                 <a href="page-activity.html" class="list-group-item">
+                                 <i class="has-bg gradient-blue shadow-bg shadow-bg-xs color-white rounded-xs bi bi-graph-up"></i>
+                                 <strong class="font-13">Activity</strong>
+                                 </a>
+                                 <a href="page-profile.html" class="list-group-item">
+                                 <i class="has-bg gradient-yellow shadow-bg shadow-bg-xs color-white rounded-xs bi bi-person-circle"></i>
+                                 <strong class="font-13">Account</strong>
+                                 </a>
+                                 <a href="page-signin-1.html" class="list-group-item">
+                                 <i class="has-bg gradient-red shadow-bg shadow-bg-xs color-white rounded-xs bi bi-power"></i>
+                                 <strong class="font-13">Log Out</strong>
+                                 </a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="divider divider-margins mb-3 opacity-50"></div>
+                  <!-- Main Menu List-->
+                  <div class="list-group list-custom list-menu-large">
+                     <a href="#" class="list-group-item">
+                        <i class="bi bg-blue-dark shadow-bg shadow-bg-xs bi-bar-chart-fill"></i>
+                        <div>Paldeck</div>
+                        <i class="bi bi-chevron-right"></i>
+                     </a>
+                    
+                     <a href="#" class="list-group-item" data-toggle-theme data-trigger-switch="switch-1">
+                        <i class="bi bg-yellow-dark shadow-bg shadow-bg-xs bi-lightbulb-fill"></i>
+                        <div>Dark Mode</div>
+                        <div class="form-switch ios-switch switch-green switch-s me-2">
+                           <input type="checkbox" data-toggle-theme class="ios-input" id="switch-1">
+                           <label class="custom-control-label" for="switch-1"></label>
+                        </div>
+                     </a>
+                  </div>
+                  <div class="divider divider-margins opacity-50"></div>
+                  <!-- Useful Links-->
+                
+               </div>
+            </div>
+         </div>
+         <!-- Notifications Bell -->
+         <a href="#" id="char_det" view="true" path="breed_combination.html" style="display:none;"></a>
+         <button type="button" id="buttonerror" style="display:none;" data-bs-toggle="offcanvas" data-bs-target="#menu-transfer-failed">notok</button>
+         <button type="button" id="buttonsukses" style="display:none;" data-bs-toggle="offcanvas" data-bs-target="#menu-transfer-ok">oke</button>
+          <button type="button" id="buttonsukses1" style="display:none;" data-bs-toggle="offcanvas" data-bs-target="#menu-transfer-ok1">oke</button>
+         <button type="button" id="loadchar" style="display:none;" data-bs-toggle="offcanvas" data-bs-target="#menu-transfer-pending">load</button>
+         <button type="button" id="loadinvoice" style="display:none;" data-bs-toggle="offcanvas" data-bs-target="#invoice-bang">load</button>
+         <button type="button" id="loadpr" style="display:none;" data-bs-toggle="offcanvas" data-bs-target="#menu-transfer-pending1">load</button>
+         <button type="button" id="buyed" style="display:none;" data-bs-toggle="offcanvas" data-bs-target="#menu-transfer-pending2">load</button>
+         <button type="button" id="vipbt" style="display:none;" data-bs-toggle="offcanvas" data-bs-target="#menu-transfer-pending3">load</button>
+         <button type="button" id="vipbt1" style="display:none;" data-bs-toggle="offcanvas" data-bs-target="#menu-transfer-pending4">load</button>
+         <a href="#" id="cart_det" view="true" path="cart_view.html" style="display:none;"></a>
+          <a href="#" id="invoice_det" view="true" path="invoice.html" style="display:none;"></a>
+          <a href="#" id="vipaa" view="true" path="invoice.html" style="display:none;"></a>
+          <a href="#" id="resultinvoice" view="true" path="result_invoice.html" style="display:none;"></a>
+         <div id="menu-transfer-ok" style="width: 320px; display: block; visibility: hidden;" class="offcanvas offcanvas-modal offcanvas-detached rounded-m" aria-hidden="true">
+            <div class="content text-center">
+               <img src="img/Lamball.png"  id="imgnya" height="35%" width="35%">
+               <h1 class="pt-3 font-28"></h1>
+               <h3 class="font-14" id="suksesstats">
+               </h3>
+               <a href="#" data-bs-toggle="offcanvas" class="btn btn-full gradient-green shadow-bg shadow-bg-xs">Okay</a>
+            </div>
+         </div>
+
+          <div id="menu-transfer-ok1" style="width: 320px; display: block; visibility: hidden;" class="offcanvas offcanvas-modal offcanvas-detached rounded-m" aria-hidden="true">
+            <div class="content text-center">
+               <i style="font-size:65px;" class="scale-box bi bi-check-circle-fill color-green-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
+               <h1 class="pt-3 font-28">Berhasil!</h1>
+               <p class="font-14" id="suksesstats1">
+               </p>
+               <a href="#" id="char_det1" data-bs-toggle="offcanvas" view="true" path="invoice_list.html" class="btn btn-full gradient-green shadow-bg shadow-bg-xs">Okay</a>
+            </div>
+         </div>
+      </div>
+      <div id="menu-bill" class="offcanvas offcanvas-bottom offcanvas-detached rounded-m" style="display: block; visibility: hidden;" aria-hidden="true">
+        <!-- menu-size will be the dimension of your menu. If you set it to smaller than your content it will scroll-->
+        <div class="menu-size" style="height:350px;">
+            <div class="d-flex mx-3 mt-3 py-1">
+                <div class="align-self-center">
+                    <h1 class="mb-0">Pay a Bill</h1>
+                </div>
+                <div class="align-self-center ms-auto">
+                    <a href="#" class="ps-4 shadow-0 me-n2" data-bs-dismiss="offcanvas">
+                        <i class="bi bi-x color-red-dark font-26 line-height-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="divider divider-margins mt-3 mb-2"></div>
+            <div class="content mt-0">
+                <div class="d-flex">
+                    <h5 class="mb-0 font-600 font-14">From</h5>
+                    <h5 class="mb-0 ms-auto font-600 font-14">Cool-Co LTD</h5>
+                </div>
+                <div class="divider my-2"></div>
+                <div class="d-flex">
+                    <h5 class="mb-0 font-600 font-14">Period</h5>
+                    <h5 class="mb-0 ms-auto font-600 font-14">1st to 30th June</h5>
+                </div>
+                <div class="divider my-2"></div>
+                <div class="d-flex">
+                    <h5 class="mb-0 font-600 font-14">Invoice</h5>
+                    <h5 class="mb-0 ms-auto font-600 font-14">ID-315613</h5>
+                </div>
+                <div class="divider my-2"></div>
+                <div class="d-flex">
+                    <h5 class="mb-0 font-600 font-14">Amount</h5>
+                    <h5 class="mb-0 ms-auto font-700 font-14 color-blue-dark">$145 USD</h5>
+                </div>
+                <div class="divider my-2"></div>
+                <div class="d-flex">
+                    <h5 class="mb-0 font-600 font-14">Bill Status</h5>
+                    <h5 class="mb-0 ms-auto font-700 font-14 color-red-dark">Overdue</h5>
+                </div>
+                <div class="divider my-2"></div>
+            </div>
+            <a href="#" data-bs-dismiss="offcanvas" class="mx-3 btn btn-full gradient-blue shadow-bg shadow-bg-s">Tap to Pay -  145 USD</a>
+        </div>
+    </div>
+      <div id="menu-transfer-failed" style="width: 320px; display: block; visibility: hidden;" class="offcanvas offcanvas-modal offcanvas-detached rounded-m" aria-modal="true">
+         <div class="content text-center">
+            <i style="font-size:65px;" class="scale-box bi bi-x-circle-fill color-red-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
+            <h1 class="pt-3 font-28">Failed!</h1>
+            <p class="font-14 mb-0" id="errorstats">
+               There was an error processing your request. Please contact support for more details.
+            </p>
+            <a href="#" class="py-4 font-700 text-uppercase d-block" id="kodestats"></a>
+            <a href="#" data-bs-toggle="offcanvas" class="btn btn-full gradient-red shadow-bg shadow-bg-xs">Okay</a>
+         </div>
+      </div>
+      <div id="menu-highlig" style="width: 320px; display: block; visibility: hidden;" class="offcanvas offcanvas-modal offcanvas-detached rounded-m" aria-modal="true">
+         <!-- menu-size will be the dimension of your menu. If you set it to smaller than your content it will scroll-->
+         <div class="menu-size" style="height:380px;">
+            <div class="d-flex mx-3 mt-3 py-1">
+               <div class="align-self-center">
+                  <h1 class="mb-0">Ganti Warna Tema <span class="color-highlight">Solvine UCP</span></h1>
+               </div>
+               <div class="align-self-center ms-auto">
+                  <a href="#" class="py-3 ps-4 shadow-0 me-n2" data-bs-dismiss="offcanvas">
+                  <i class="bi bi-x color-red-dark font-26"></i>
+                  </a>
+               </div>
+            </div>
+            <div class="content mt-n1 pb-2">
+               <p class="mb-3">
+                  Anda dapat mengganti warna tema dengan warna tersedia dibawah ini!
+               </p>
+               <div class="divider mb-4"></div>
+               <div class="d-flex text-center">
+                  <div class="m-auto">
+                     <a href="#" data-change-highlight="red" class="icon gradient-red shadow-bg shadow-bg-xs rounded-s"></a>
+                     <h5 class="font-14 mt-n1">Red</h5>
+                  </div>
+                  <div class="m-auto">
+                     <a href="#" data-change-highlight="green" class="icon gradient-green shadow-bg shadow-bg-xs rounded-s"></a>
+                     <h5 class="font-14 mt-n1">Green</h5>
+                  </div>
+                  <div class="m-auto">
+                     <a href="#" data-change-highlight="blue" class="icon gradient-blue shadow-bg shadow-bg-xs rounded-s"></a>
+                     <h5 class="font-14 mt-n1">Blue</h5>
+                  </div>
+                  <div class="m-auto">
+                     <a href="#" data-change-highlight="mint" class="icon gradient-mint shadow-bg shadow-bg-xs rounded-s"></a>
+                     <h5 class="font-14 mt-n1">Mint</h5>
+                  </div>
+               </div>
+               <div class="pt-3"></div>
+               <div class="d-flex text-center">
+                  <div class="m-auto">
+                     <a href="#" data-change-highlight="orange" class="icon gradient-orange shadow-bg shadow-bg-xs rounded-s"></a>
+                     <h5 class="font-14 mt-n1">Orange</h5>
+                  </div>
+                  <div class="m-auto">
+                     <a href="#" data-change-highlight="yellow" class="icon gradient-yellow shadow-bg shadow-bg-xs rounded-s"></a>
+                     <h5 class="font-14 mt-n1">Yellow</h5>
+                  </div>
+                  <div class="m-auto">
+                     <a href="#" data-change-highlight="magenta" class="icon gradient-magenta shadow-bg shadow-bg-xs rounded-s"></a>
+                     <h5 class="font-14 mt-n1">Magenta</h5>
+                  </div>
+                  <div class="m-auto">
+                     <a href="#" data-change-highlight="brown" class="icon gradient-brown shadow-bg shadow-bg-xs rounded-s"></a>
+                     <h5 class="font-14 mt-n1">Brown</h5>
+                  </div>
+               </div>
+            </div>
+            <a href="#" data-bs-dismiss="offcanvas" class="mx-3 btn btn-full gradient-highlight shadow-bg shadow-bg-s">Awesome</a>
+         </div>
+      </div>
+     <div id="menu-transfer-pending" style="width: 320px; display: block; visibility: hidden;" class="offcanvas offcanvas-modal offcanvas-detached rounded-m" aria-hidden="true">
+        <div class="content text-center">
+            <i style="font-size:65px;" class="scale-box bi bi-question-circle-fill color-blue-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
+            <h1 class="pt-3 font-28">Loading . . .</h1>
+            <p class="font-14">
+                Loading information, please wait . . .
+            </p>
+            <button type="button" id="hilang" style="display: none;" data-bs-toggle="offcanvas" class="btn btn-full gradient-blue shadow-bg shadow-bg-xs">Okay</button>
+        </div>
+    </div>
+     <div id="invoice-bang" style="width: 320px; display: block; visibility: hidden;" class="offcanvas offcanvas-modal offcanvas-detached rounded-m" aria-hidden="true">
+        <div class="content text-center">
+            <i style="font-size:65px;" class="scale-box bi bi-question-circle-fill color-blue-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
+            <h1 class="pt-3 font-28">Loading . . .</h1>
+            <p class="font-14">
+               Loading Data, Please Wait . . .
+            </p>
+            <button type="button" id="hilang3" style="display: none;" data-bs-toggle="offcanvas" class="btn btn-full gradient-blue shadow-bg shadow-bg-xs">Okay</button>
+        </div>
+    </div>
+     <div id="menu-transfer-pending1" style="width: 320px; display: block; visibility: hidden;" class="offcanvas offcanvas-modal offcanvas-detached rounded-m" aria-hidden="true">
+        <div class="content text-center">
+            <i style="font-size:65px;" class="scale-box bi bi-question-circle-fill color-blue-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
+            <h1 class="pt-3 font-28">Loading . . .</h1>
+            <p class="font-14">
+                Menambahkan ke Keranjang..
+            </p>
+            <button type="button" id="hilang1" style="display: none;" data-bs-toggle="offcanvas" class="btn btn-full gradient-blue shadow-bg shadow-bg-xs">Okay</button>
+        </div>
+    </div>
+     <div id="menu-transfer-pending2" style="width: 320px; display: block; visibility: hidden;" class="offcanvas offcanvas-modal offcanvas-detached rounded-m" aria-hidden="true">
+        <div class="content text-center">
+            <i style="font-size:65px;" class="scale-box bi bi-question-circle-fill color-blue-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
+            <h1 class="pt-3 font-28">Sabar Temanku . . .</h1>
+            <p class="font-14">
+                Menunggu QR Code & Detail Pembayaran
+            </p>
+            <button type="button" id="hilang2" style="display: none;" data-bs-toggle="offcanvas" class="btn btn-full gradient-blue shadow-bg shadow-bg-xs">Okay</button>
+        </div>
+    </div>
+     <div id="menu-transfer-pending3" style="width: 320px; display: block; visibility: hidden;" class="offcanvas offcanvas-modal offcanvas-detached rounded-m" aria-hidden="true">
+        <div class="content text-center">
+            <i style="font-size:65px;" class="scale-box bi bi-question-circle-fill color-blue-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
+            <h1 class="pt-3 font-28">Melakukan perubahan . . .</h1>
+            <p class="font-14">
+                Merubah status invoice mohon tunggu . . . 
+            </p>
+            <button type="button" id="hilang2" style="display: none;" data-bs-toggle="offcanvas" class="btn btn-full gradient-blue shadow-bg shadow-bg-xs">Okay</button>
+        </div>
+    </div>
+    <div id="menu-transfer-pending4" style="width: 320px; display: block; visibility: hidden;" class="offcanvas offcanvas-modal offcanvas-detached rounded-m" aria-hidden="true">
+        <div class="content text-center">
+            <i style="font-size:65px;" class="scale-box bi bi-question-circle-fill color-blue-dark shadow-s rounded-circle p-0 mt-3 mb-3 d-inline-block"></i>
+            <h1 class="pt-3 font-28">Mencari Invoice . . .</h1>
+            <p class="font-14">
+                Menunggu respon server . . . 
+            </p>
+            <button type="button" id="hilang2" style="display: none;" data-bs-toggle="offcanvas" class="btn btn-full gradient-blue shadow-bg shadow-bg-xs">Okay</button>
+        </div>
+    </div>
+      </div>
+      <!-- End of Page ID-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css">
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+      <script
+         src="https://code.jquery.com/jquery-3.6.0.min.js"
+         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+         crossorigin="anonymous"></script>
+      <script src="scripts/bootstrap.min.js"></script>
+      <script src="scripts/custom.js"></script>
+      <script src="scripts/newjs.js?id=scdcdsd"></script>
+      
+<script>
+$(document).ready(function() {
+    if(!('userdata' in localStorage))
+      javascript:location.replace('index.html');
+    
+    if(localStorage.userdata == 'undefined' || localStorage.userdata == '' || localStorage.userdata == null) 
+        javascript:location.replace('index.html');
+});
+if('pal' in local) {
+var abc = JSON.parse(local.pal);
+console.log(abc);
+if(abc.data.length > 0) {
+    $.each(abc.data, function(k,val) {
+       var el = '<a href="#" class="d-flex py-1"> <div class="align-self-center"> <span class="icon rounded-s me-2 gradient-white shadow-bg shadow-bg-s"><img src="img/'+val.name+'.png" height="45px" width="45px"></span> </div> <div class="align-self-center ps-1"> <h5 class="pt-1 mb-n1">'+val.name+'</h5> </div> <div class="align-self-center ms-auto text-end"> <span onclick="SaveDetails(\''+val.keyp+'\');" class="btn btn-xxs gradient-blue shadow-bg shadow-bg-xs">Breed Combo</span> </div> </a> <div class="divider my-2 opacity-50"></div>';
+        $('[data-tab="charl"]').append(el);
+    });
+      
+    }else{
+        var el = '<a href="#" class="d-flex py-1"> <div class="align-self-center"> <span class="icon rounded-s me-2 gradient-white shadow-bg shadow-bg-s"><img src="img/'+abc.data.name+'.png" height="45px" width="45px"></span> </div> <div class="align-self-center ps-1"> <h5 class="pt-1 mb-n1">'+abc.data.name+'</h5> </div> <div class="align-self-center ms-auto text-end"> <span onclick="SaveDetails(\''+abc.data.keyp+'\');" class="btn btn-xxs gradient-blue shadow-bg shadow-bg-xs">Breed Combo</span> </div> </a> <div class="divider my-2 opacity-50"></div>';
+        $('[data-tab="charl"]').append(el);
+    }
+
+}else{
+     var el = '<center><h5 class="pt-1 mb-n1">Data Error</h5></center>';
+           $('[data-tab="charl"]').append(el);
+}
+function SaveDetails(p){
+       var path = 'get_breed';
+       var data = 'pals='+p;
+       $('#loadchar').click();
+       poster(path, data, function(r) {
+           setTimeout(function() {
+               $('#preloader').addClass('preloader-hide');
+                   if(r.status == 'success') {
+                      $('#hilang').click();
+                       //console.log(id);
+                       local.breed_combo = JSON.stringify(r.breed_combo);
+                       $('#char_det').click();
+                   }else{
+                     //console.log(id);
+                      $('#hilang').click();
+                       Swal.fire({
+                         icon: 'error',
+                         title: 'Error Code:'+r.code,
+                         text: r.msg,
+                       })
+                   }
+               
+           }, 2000);
+       });
+}
+      </script>
+   </body>

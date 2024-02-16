@@ -1,0 +1,63 @@
+
+        <div style="width:100vw">
+            <!-- Page Title-->
+           <div class="pt-3">
+               <div class="page-title d-flex">
+                   <div class="align-self-center">
+                       <a href="#"
+                       onclick="javascript:location.replace('home.html');"
+                       class="me-3 ms-0 icon icon-xxs bg-theme rounded-s shadow-m">
+                           <i class="bi bi-chevron-left color-theme font-14"></i>
+                       </a>
+                   </div>
+                   <div class="align-self-center me-auto">
+                       <h1 class="color-theme mb-0 font-18">Back to Home</h1>
+                   </div>
+                   
+               </div>
+           </div>
+            <div class="card overflow-visible card-style">
+               <div class="content mb-0">
+                  <h4>Breeding Combinations</h4>
+                  <div class="table-responsive">
+                     <table class="table color-theme mb-2">
+                        <thead>
+                           <tr>
+                              <th scope="col">First Parent</th>
+                              <th scope="col">Second Parent</th>
+                              <th scope="col">Result</th>
+
+                           </tr>
+                        </thead>
+                        <tbody apalu="online2">
+                           
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+        </div>
+
+
+      <script>
+
+    if ('breed_combo' in local) {
+        var pl = JSON.parse(local.breed_combo);
+        console.log(pl);
+        if (pl.data.length > 0) {
+            $.each(pl.data, function(k, val) {
+               
+                var el = '<tr><td><img src="img/'+val.parent_1_name+'.png" height="40%" width="40%"> <br>'+val.parent_1_name+'</td>  <td><img src="img/'+val.parent_2_name+'.png" height="40%" width="40%"> <br>'+val.parent_2_name+'</td> <td><img src="img/'+val.result_name+'.png" height="40%" width="40%"> <br>'+val.result_name+'</td></tr>';
+                $('[apalu="online2"]').append(el);
+            });
+        } else {
+           
+            var el = '<tr><td><img src="img/'+pl.data.parent_1_name+'.png" height="40%" width="40%"> <br>'+pl.data.parent_1_name+'</td>  <td><img src="img/'+pl.data.parent_2_name+'.png" height="40%" width="40%"> <br>'+pl.data.parent_2_name+'</td> <td><img src="img/'+pl.data.result_name+'.png" height="40%" width="40%"> <br>'+pl.data.result_name+'</td></tr>';
+            $('[apalu="online2"]').append(el);
+        }
+    } else {
+        var el = ' <tr><td>KOSONG</td> <td>KOSONG</td> <td class="color-green-dark">KOSONG</td> <td>KOSONG</td></tr>';
+        $('[apalu="online2"]').append(el);
+    }
+
+    </script>
