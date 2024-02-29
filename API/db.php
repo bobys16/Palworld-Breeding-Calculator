@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect('localhost','madj5441_main','Bobys123','madj5441_a');
+$connect = mysqli_connect('localhost','root','passs','db');
 if(!$connect) die('died.');
 header('Access-Control-Allow-Origin: *');
 date_default_timezone_set("Asia/Jakarta");
